@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>CGPA Calculator</title>
+</head>
+
+<body>
+
+    <!-- =================  GitHub Logo  ================  -->
+    <div id="git_link">
+        <a href="https://github.com/niloyahsan/studyhelp.git"><img src="./photos/git.png" id="github"></a>
+    </div>
+    <!-- =================  GitHub Logo  ================  -->
+
+
+    <h1>CGPA Calculator</h1>
+    <form>
+        <div>
+            <label for="cdcom">Credit Completed:</label>
+            <input type="number" id="cdcom" name="cdcom" required>
+        </div>
+        <div>
+            <label for="oldcgpa">Current CGPA:</label>
+            <input type="number" step="0.01" id="oldcgpa" name="oldcgpa" required>
+        </div>
+
+        <div>
+            <label for="courseCount">Number of Courses:</label>
+            <select id="courseCount" name="courseCount" required>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+
+        <div id="courseGpaInputs">
+        </div>
+
+        <button type="submit" id="calculateButton">Calculate CGPA</button>
+    </form>
+
+    <div class="center-button">
+        <div class="box" id="resultBox">
+            <p id="resultText"></p>
+            <a href="index.html"><button type="submit">Start Over</button></a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
