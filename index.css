@@ -31,6 +31,7 @@ form {
 }
 
 label {
+  margin-top: 5px;
   display: block;
   margin-bottom: 10px;
   font-weight: bold;
@@ -49,6 +50,7 @@ select {
   font-size: 15px;
   background-color: #06142e;
 }
+
 
 button[type="submit"] {
   width: 100%;
