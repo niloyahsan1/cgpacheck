@@ -1,5 +1,6 @@
-# cgpa_calculator
+# CGPA Calculator
 
-Calculate your CGPA easily!
+## Specially for BRACU Students
 
-Live link: https://niloyahsan.github.io/cgpa/
+- Calculate your CGPA easily!
+- [Calculate Now!](https://niloyahsan1.github.io/cgpacheck/)
