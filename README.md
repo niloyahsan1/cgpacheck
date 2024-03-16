@@ -4,3 +4,4 @@
 
 - Calculate your CGPA easily!
 - Calculate Now! [Click Here](https://niloyahsan1.github.io/cgpacheck/)
+---
