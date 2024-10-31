@@ -9,13 +9,15 @@ document.addEventListener("DOMContentLoaded", function () {
         var courseCount = parseInt(courseCountSelect.value);
         courseGpaInputs.innerHTML = ""; // Clear previous inputs
 
-        for (var i = 1; i <= courseCount; i++) {
-            var div = document.createElement("div");
-            div.innerHTML = `
-                <label for="c${i}_gpa">Course ${i} GPA:</label>
-                <input type="number" step="0.01" id="c${i}_gpa" name="c${i}_gpa" required>
-            `;
-            courseGpaInputs.appendChild(div);
+        if (courseCount > 0) {
+            for (var i = 1; i <= courseCount; i++) {
+                var div = document.createElement("div");
+                div.innerHTML = `
+                    <label for="c${i}_gpa">Course ${i} GPA:</label>
+                    <input type="number" step="0.01" id="c${i}_gpa" name="c${i}_gpa" required>
+                `;
+                courseGpaInputs.appendChild(div);
+            }
         }
     });
 
@@ -41,15 +43,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var lastsempoints = cdcom * oldcgpa;
         var recentpoints = 0;
+        var newcd = courseCount * 3;
 
-        // Calculate points for regular courses
-        for (var i = 1; i <= courseCount; i++) {
-            var courseGpa = parseFloat(document.getElementById(`c${i}_gpa`).value);
-            recentpoints += 3 * courseGpa; // Assuming each course has 3 credits
+        // Calculate points for regular courses if courseCount > 0
+        if (courseCount > 0) {
+            for (var i = 1; i <= courseCount; i++) {
+                var courseGpa = parseFloat(document.getElementById(`c${i}_gpa`).value);
+                recentpoints += 3 * courseGpa; // Assuming each course has 3 credits
+            }
         }
 
         // Add points for CSE400 if taken
-        var newcd = courseCount * 3;
         if (hasCSE400) {
             var cse400Gpa = parseFloat(document.getElementById("cse400_gpa").value);
             recentpoints += 4 * cse400Gpa; // Assuming CSE400 has 4 credits
